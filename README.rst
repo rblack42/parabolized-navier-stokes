@@ -1,4 +1,6 @@
-Parabolized Navier Stokes ######################### :Author: Roie R. Black
+Parabolized Navier Stokes
+#########################
+:Author: Roie R. Black
 :Email: roie.black@gmail.com :Docs:
 https://rblack42.github.io/parabolized-navier-stokes
 
