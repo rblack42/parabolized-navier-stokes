@@ -1,0 +1,9 @@
+jupyter-book
+numpy
+sympy
+pint
+matplotlib
+git+git://github.com/mkrphys/ipython-tikzmagic.git
+sphinxcontrib-tikz
+imageio
+version_information
