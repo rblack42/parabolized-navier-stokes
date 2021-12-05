@@ -3,6 +3,9 @@
 
 format: jb-book
 root: intro
+options:
+  numbered: True
 chapters:
-- file: markdown
-- file: notebooks
+- file: appendix
+  sections:
+    - file: appendix/derivation

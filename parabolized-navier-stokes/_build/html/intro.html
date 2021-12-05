@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>Parabolized Navier Stokes Equations &#8212; RRBaxi - Parabolized Navier Stokes Solver</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="1. Appendix" href="appendix.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -80,7 +80,7 @@
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">RRBaxi - Parabolized Navier Stokes Solver</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -91,20 +91,27 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Welcome to your Jupyter Book
+   Parabolized Navier Stokes Equations
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="appendix.html">
+   1. Appendix
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="appendix/derivation.html">
+     1.1. Derivation of Navier Stokes Equations
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -163,11 +170,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/rblack42/parabolized-navier-stokes"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rblack42/parabolized-navier-stokes/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -196,19 +203,40 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note!</p>
-</div>
-<p>And here is a code block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
-</div>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="parabolized-navier-stokes-equations">
+<h1>Parabolized Navier Stokes Equations<a class="headerlink" href="#parabolized-navier-stokes-equations" title="Permalink to this headline">¶</a></h1>
+<p>This document is a <em>Jupyter-Book</em> that uses Python <em>SymPy</em> to generate an
+example program that solves the <em>Parabolized Navier Stokes</em> equations for
+axisymmetric flow over an ogive-cylinder flying at Mach 6. This project was
+originally developed by the author in 1976 while working as a research
+scientist at the USAF Aerospace Research Laboratory at Wright-Patterson AFB in
+Dayton, Ohio. This was my first assignment in the USAF after getting my degrees
+in Aerospace Engineering at Virginia Tech. This project was part of research I
+was conducting for my PhD, but I never managed to complete the dissertation.</p>
+<p>At the time, the program was written in FORTRAN, and ran on a CDC 6600, one of
+the most powerful computers available at the time. The code served as the basis
+for several Master’s thesis projects a few years later, when I was teaching
+Computer Science at the Air Force Institute of Technology, also in at WPAFB.</p>
+<p>In 2003, I rewrote the original code in Python while working on a second
+Master’s degree, this time in Computer Science at Texas State University in San
+Marcos, Texas. I found my original notes and decided it was time to put them
+into use once again, to build an updated version of the code.</p>
+<p>The derivation of the equations used in this project found in the appendix, are
+transcriptions of my original notes. I kept those and a listing of the original
+FORTRAN code as well.</p>
+<p>Just for fun, the Fortran code is also included here, rewritten to run under
+GNU <strong>gfortran</strong>. The code has been updated to Fortran-2008, but is otherwise
+identical to code I have not touched in 40 years!</p>
+<p>All code presented in this book was tested on my Macbook Pro. The CDC code took
+about 10 minutes of machine time back in 1976. That same code nor runs in less
+than 5 seconds on my laptop! Progress!</p>
+<ul class="simple">
+<li><p>Roie Black</p></li>
+<li><p>Major, USAF (retired)</p></li>
+<li><p>Professor, Computer Science (retired)</p></li>
+<li><p>B.S., M.S, Aerospace Engineering</p></li>
+<li><p>M.S., Computer Science</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -238,10 +266,10 @@ structured.</p>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">
+    <a class='right-next' id="next-link" href="appendix.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Appendix</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -253,7 +281,7 @@ structured.</p>
     <div class="container">
       <p>
         
-          By The Jupyter Book Community<br/>
+          By Roie R. Black<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

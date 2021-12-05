@@ -11,7 +11,7 @@ venv:
 reqs:
 	pip install -U pip
 	pip install -r requirements.txt
-	cp /files/tikzmagic.py .direnv/python3.9.8/lib/python3.9/site-packages
+	cp /files/tikzmagic.py .direnv/python3.9.7/lib/python3.9/site-packages
 
 .PHONY: docs
 docs:
