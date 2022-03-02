@@ -1,0 +1,16 @@
+matplotlib
+numpy
+scipy
+sympy
+Pmw
+
+jupyter-book
+jupyter-contrib-nbextensions
+git+git://github.com/mkrphys/ipython-tikzmagic.git
+
+pytest
+pytest-cov
+coverage
+flake8
+nbmake
+ipytest

@@ -6,6 +6,10 @@
 __pycache__
 .direnv
 
+# Fortran
+*.o
+rrbaxi
+
 # Vim
 *.swp
 *~

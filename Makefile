@@ -1,24 +1,44 @@
-BOOK	:= parabolized-navier-stokes
+PROJPATH = $(PWD)
+PROJNAME = $(notdir $(PROJPATH))
 
-all:	docs
+FSRCS	:= src/shared.f90 \
+		   src/init.f90 \
+		   src/prtplot.f90 \
+		   src/body.f90 \
+		   src/solve.f90 \
+		   src/main.f90
+FOBJS	:= $(FSRCS:.f90=.o)
+FFLAGS	:= -O -std=f2018 -Jmod -fcheck=bounds
+
+.PHONY: build
+build:	$(FOBJS)
+	gfortran -o $(PROJNAME) $^
+
+%.o:	%.f90
+	gfortran -c -o $@ $< $(FFLAGS)
+
+.PHONY: clean
+clean:
+	rm -f $(FOBJS)
+	rm -f mod/*
 
 .PHONY: venv
 venv:
 	echo 'layout python3' > .envrc && \
 		direnv allow
 
+.PHONY: pyinit
+pyinit:
+	pip install -U pip pip-tools
+
 .PHONY: reqs
 reqs:
-	pip install -U pip
+	pip-compile
 	pip install -r requirements.txt
-	cp /files/tikzmagic.py .direnv/python3.9.7/lib/python3.9/site-packages
-
-.PHONY: docs
-docs:
-	jupyter-book build $(BOOK)/
-	cp -R $(BOOK)/_build/html/ docs
+	cp ~/_sys/tikzmagic.py .direnv/python-3.10.2/lib/python3.10/site-packages/
 
 .PHONY: nb
 nb:
-	cd $(BOOK) && \
+	cd book && \
 		jupyter notebook
+

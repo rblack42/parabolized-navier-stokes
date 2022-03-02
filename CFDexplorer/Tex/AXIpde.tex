@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath}
+\begin{document}
+\section{Basic Equatons}
+
+\subsection{Coordinate Transformation}
+
+the coordinate system for the computation is defined as follows:
+
+\[
+{\xi} = {X}
+\]
+\par{}
+\[
+{\eta} = \frac{{r} - {r_b}}{{r_s} - {r_b}}
+\]
+\par{}
+
+We will discretize the computational domain in both the $\xi$ and $\eta$ directions:
+
+\[
+{x} = {i}{\Delta}{\xi}
+\]
+\par{}
+\[
+{r} = {r_b} + {j}{\Delta}{\eta}({r_s} - {r_b})
+\]
+
+For the discretized coordinate system
+\[
+{\eta_r} = \frac{1}{{r_s} - {r_b}}
+\]
+\par{}
+\[
+{\eta_x} = \{(\eta - 1){r_b}_x -{\eta}{r_s}_x\}*{\eta_r}
+\]
+\par{}
+\subsection{Basic Governing Equation format}
+
+Here is the matrix form for the governing equations:
+
+\[ {\xi_x}({{E^*_p})_\xi} + {\eta_x}{E^*_\eta} + {\eta_r}{F^*_\eta} = {R} \]
+\par{}
+
+\subsection{MacCormack's Predictor Corrector Scheme}
+\[
+({E^*_P})^{\overrightarrow{{i+1}}}_{j} = ({E^*_P})^{i}_{j} -
+\frac{\Delta\xi}{\xi\Delta\eta}(
+({\eta_x}^i_j({E^*_{j+1}})^i - {E^*_j}^i
+)
+\]
+
+\[
+X
+\]
+
+Where the terms are defined as follows:
+\[
+{E^*_p} = {\begin{pmatrix}
+{\rho}{u}{r} \\
+({\rho}{u^2} + {P}){r} \\
+({\rho}{u}{v}){r} \\
+({\rho}{u}{H}){r} \\
+\end{pmatrix}}
+\]
+\par{}
+\[
+{E^*} = {\begin{pmatrix}
+{\rho}{u}{r} \\
+({\rho}{u^2} + P - \frac{1}{Re}{\sigma^*_xx})*{r} \\
+({\rho}{u}{v} - \frac{1}{Re}{\tau^*_xr}){r} \\
+({\rho}{u}{H} - \frac{1}{{Pr}{Re}}*{\mu}{T^*_x}){r} -
+    \frac{r}{Re}({u}{\sigma^*_xx}+{v}{\tau^*_xr})
+\end{pmatrix}}
+\]
+\par{}
+\[
+{F^*} = {\begin{pmatrix}
+{\rho}{v}{r} \\
+({\rho}{u}{v} - \frac{1}{Re}{\tau^*_xr}){r} \\
+({\rho}{v^2} + {P} - \frac{1}{Re}{\sigma^*_rr}){r} \\
+({\rho}{v}{H} - \frac{1}{{Pr}{Re}}{\mu}{T_r}){r} -
+    \frac{r}{{Pr}{Re}}({u}{\tau^*_xr}+{v}{\sigma^*_rr})
+\end{pmatrix}} 
+\]
+\par{}
+\[
+{P} = - P^* + \frac{2}{3}\mu \nabla \cdot \overrightarrow{V} = -p^* - \lambda\nabla\cdot\overrightarrow{V}
+\]
+\end{document}

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<window width="400" height="300">
+	<menubar>
+		<cascademenu name = "File" underline="0">
+			<cascadeitem name="Open" underline="0"/>
+			<cascadeitem name="New" underline="0"/>
+			<cascadeitem name="Close" underline="0"/>
+			<cascadesep/>
+			<cascadeitem name="Save" underline="0"/>
+			<cascadeitem name="Save_As" underline="0"/>
+			<cascadesep/>
+			<cascadeitem name="Print" underline="0"/>
+			<cascadesep/>
+			<cascadeitem name="Save_Exit" underline="0"/>
+			<cascadeitem name="Exit" underline="0" command="onExit"/>
+		</cascademenu>
+		<cascademenu name = "Edit" underline="0">
+		</cascademenu>
+		<cascademenu name = "Help" underline="0">
+			<cascadeitem name="User_Manual" underline="0"/>
+			<cascadeitem name="About" underline="0"/>
+		</cascademenu>
+	</menubar>
+	<frame name="lf" side="left" fill="y">
+		<listbox name="ListBox" side="left" fill="both" expand="1">
+			<listdir directory="." load="rf" select="OnLoad"/>
+		</listbox>
+	</frame>
+	<frame name="rf" side="right" fill="both" expand="1">
+		<textbox name="OutputText" side="bottom" fill="both" expand="1">
+			<loadfile/>
+		</textbox>
+	</frame>
+</window>
+
+
+	
+
