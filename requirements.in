@@ -2,7 +2,9 @@ matplotlib
 numpy
 scipy
 sympy
+pint
 Pmw
+fluids
 
 jupyter-book
 jupyter-contrib-nbextensions

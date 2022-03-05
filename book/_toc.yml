@@ -6,6 +6,8 @@ root: intro
 options:
   numbered: True
 chapters:
+  -file: navier-stokes-equations
 - file: appendix
   sections:
-    - file: appendix/derivation
+    - file: appendix/mach-number
+      

@@ -42,3 +42,8 @@ nb:
 	cd book && \
 		jupyter notebook
 
+.PHONY: bool
+book:
+	jb build book
+	cp -R book/* docs
+
