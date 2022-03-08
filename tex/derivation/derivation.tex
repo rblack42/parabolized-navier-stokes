@@ -1,4 +1,4 @@
-\section{Derivation of Fluid Dynaics Equations of Motion}
+\section{Derivation of Fluid Dynamics Equations of Motion}
 
 The  system of equations which govern the flow of any fluid, the familiar
 Navier-Stokes equations, may be derived from the concepts of conservation of
@@ -27,9 +27,11 @@ Now, let $\overrightarrow{V}$ be the velocity of a fluid element passing
 through the control volume $R$. We can state the principle of conservation of
 mass as:
 
+\begin{quote}
 The time rate of change of mass increase within the control volume $R$, in
-the absence of internal sources, is equal >to the net flux of mass into $R$
+the absence of internal sources, is equal to the net flux of mass into $R$
 through the surface $S$.
+\end{quote}
 
 The outward component of the mass flux at any point on $S$ is given by:
 
@@ -79,14 +81,16 @@ But, since the volume is arbitrary, the integrand must be zero, giving this fina
 
 The conservation of momentum law is stated as follows:
 
+\begin{quote}
 The time rate of momentum increase throughout $R$ is equal to the net force
 acting on $R$ plus the net flux of momentum into $R$ through the surface $S$.
+\end{quote}
 
 The net force acting on $R$ will consist of any externally applied body force
 plus the forces acting on $R$ that stem from the motion of the fluid itself.
 These later forces are the internal stress forces acting on the fluid volume.
 Since any body forces will be specified, we need to find a way to describe the
-internal shear forces.  
+internal stress forces in the fluid at any point.  
 
 Stress is related to the forces exerted on a fluid particle by adjacent
 particles. If we cut our control volume with a plane, the force per unit area
@@ -132,7 +136,10 @@ The three dependent stresses are:
 
 Therefore, the stress matrix is seen to be symmetric.
 
-In general, as a fluid volume moves, it will both deform and rotate. If we consider two points along the path of this motion, we can use a *Taylor's Series* to relate the velocity at one point to the velocity at the other. In cartesian coordinates this becomes:
+In general, as a fluid volume moves, it will both deform and rotate. If we
+consider two points along the path of this motion, we can use a *Taylor's
+Series* to relate the velocity at one point to the velocity at the other. In
+Cartesian coordinates this becomes:
 
 \begin{equation}
 \begin{aligned}
@@ -152,3 +159,270 @@ We can write similar equations for the remaining two velocity components. If we 
 \begin{equation}
 U_B = U_A + \left(\frac{\partial U}{\partial x}\right)_A (x_B - x_A)  + \left(\frac{\partial U}{\partial y}\right)_A (y_B - y_A)  + \left(\frac{\partial U}{\partial z}\right)_A (z_B - z_A)
 \end{equation}
+
+This can be expressed in matrix form as:
+
+\begin{equation}
+  \Rttensor{D} = \begin{bmatrix}
+  \frac{\partial{u}}{\partial{x}} & 
+  \frac{\partial{u}}{\partial{y}} & 
+  \frac{\partial{u}}{\partial{z}} \\
+
+  \frac{\partial{v}}{\partial{x}} & 
+  \frac{\partial{v}}{\partial{y}} & 
+  \frac{\partial{v}}{\partial{z}} \\
+
+  \frac{\partial{w}}{\partial{x}} & 
+  \frac{\partial{w}}{\partial{y}} & 
+  \frac{\partial{w}}{\partial{z}}
+  \end{bmatrix} = \overrightarrow{\nabla}\overrightarrow{V}
+\end{equation}
+
+This matrix is commonly referred to as the rate of deformation matrix.The
+derivatives $\frac{\partial{u}}{\partial{x}}$,
+$\frac{\partial{v}}{\partial{y}}$, and $\frac{\partial{w}}{\partial{z}}$
+indicate stretching motion called dilitation. The other derivatives indicate
+distortion of the fluid due to shearing forces. By viewing the motion in this
+manner it is apparent that the stresses in the fluid characterized by the
+matrix $\rttensor{\tau}$ may be described by the above deformation matrix
+together with the static pressure force. This analysis is known as {\it Stokes
+Theorem} for stresses and is given below
+
+As was previously noted, the stress matrix is symmetric. One method for forming
+a symmetric matrix from $\Rttensor{D}$ is to combine it with its transpose. Thus
+the stress tensor may be written as:
+
+\begin{equation}
+  \rttensor{\tau} = -P^* \overrightarrow{I} + \mu ( \Rttensor{D} + \Rttensor{D}^T )
+\end{equation}
+
+where $\mu$ is the bulk viscosity coefficient. It is common to define the
+hydrostatic pressure $P$ as the mean value of the three normal stresses
+$\tau_{xx}$, $\tau_{yy}$, and $\tau_{zz}$. In this case:
+
+\begin{equation}
+  P = \frac{1}{3} \{ -3P^* + 2\mu(\frac{\partial{u}}{\partial{x}} + \frac{\partial{v}}{\partial{y}} + \frac{\partial{u}}{\partial{x}} ) \}
+\end{equation}
+
+or
+
+\begin{equation}
+  P = -P^* + \frac{2}{3}\mu \nabla\cdot\overrightarrow{V}\overrightarrow{I} + \mu ( \Rttensor{D} + \Rttensor{D}^T )
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+\rttensor{\tau} = -P\Rttensor{I} + \lambda\overrightarrow{\nabla}\cdot\overrightarrow{V}\Rttensor{I}  + \mu ( \Rttensor{D} + \Rttensor{D}^T )
+\end{equation}
+
+where $\lambda$ is the dilitational viscosity coefficient. This is relaed to
+the bulk viscosity by Stokes hypothesis:
+
+\begin{equation}
+  \lambda =  - \frac{2}{3}\mu
+\end{equation}
+
+To find the contribution of the stress to the total forces acting on the
+control volume, the shear force must be integrated over the surface of the
+volume:
+
+\begin{equation}
+  d\overrightarrow{F_\tau} = \rttensor{\tau}\cdot \overrightarrow{dS}
+\end{equation}
+
+The total force acting on the fluid within the control volume is therefore given by:
+
+\begin{equation}
+  \overrightarrow{F} = \iiint_R\rho\overrightarrow{f_g} dR + \iint_S\rttensor{\tau}\cdot \overrightarrow{ds}
+\end{equation}
+
+where $\overrightarrow{f_g}$ is the externally applied force per unit mass.
+
+The momentum flux through $R$ is given by:
+
+\begin{equation}
+  \iint_S \overrightarrow{V}\left(\rho\overrightarrow{V}\cdot\overrightarrow{dS}\right)
+\end{equation}
+
+The mathematical expression for the momentum equation may now be written as
+
+\begin{equation}
+  \iiint_R(\frac{\partial}{\partial{t}}(\rho\overrightarrow{V})dR = \iiint_R\rho\overrightarrow{f_g} dR + 
+    \iint_S\rttensor{\tau}\cdot dS + \iint_S \overrightarrow{V}(\rho\overrightarrow{V}\cdot \overrightarrow{dS})
+\end{equation}
+
+Again, using the divergence theorem to convert surface integrals to volume integrals, we get this:
+
+\begin{equation}
+  \iiint_R\frac{\partial}{dt}(\rho\overrightarrow{V})dR = \iiint_R\{\rho \overrightarrow{f_g} + \overrightarrow{\nabla}\cdot\rttensor{\tau} - \overrightarrow{V}(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}) + \rho(\overrightarrow{V}\cdot\nabla)\overrightarrow{V}\}dR
+\end{equation}
+
+As with the continuity equation, this leads to this final equation:
+
+\begin{equation}
+\frac{\partial}{dt}\left(\rho\overrightarrow{V}\right) 
+  - \rho \overrightarrow{f_g} 
+  - \overrightarrow{\nabla}\cdot\rttensor{\tau} 
+  + \overrightarrow{V}\left(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}\right) 
+  + \rho\left(\overrightarrow{V}\cdot\nabla\right)\overrightarrow{V} = 0
+\end{equation}
+
+\subsection{Energy Equation}
+
+The energy equation follow from the principle conservation of energy.
+
+\begin{quote} 
+  The net rate of increase of the internal and kinetic energy, per
+  unit mass, in $R$ is equal to the net flux of heat into $R$ through the
+  surface $S$ due to heat conduction, plus the net rate of work done on $R$ due
+  to body and surface forces, plus the net influx of energy into $R$ through
+  $S$ due to the fluid motion.  
+\end{quote}
+
+It must be assumed that the classical   laws of thermodynamics, including the
+first law, hold in the presence of shear stress and heat conduction in order
+for the statement to be valid. if $e$ is the internal energy of the fluid per
+unit mass, the net increase of the internal and kinetic energy is given by:
+
+\begin{equation}
+  \iiint_R\{\rho e + \rho \frac{V^2}{2}\} dR
+\end{equation}
+
+The net flux of heat into $R$ may be found by integrating the inward component
+og the heat flux vector $\overrightarrow{Q}$ over the surface:
+
+\begin{equation}
+  \iint_S\overrightarrow{Q}\cdot\overrightarrow{dS}
+\end{equation}
+
+The work done on the fluid is a function of both body forces and shearing
+forces, and is given by
+
+\begin{equation}
+  \iint_S\overrightarrow{V} \cdot\left(\rttensor{\tau}\cdot\overrightarrow{dS}\right) 
+  + \iiint_R\left(rho \overrightarrow{f_g}\cdot\overrightarrow{V}\right)dR
+\end{equation}
+
+Finally, the net influx of energy due to the fluid motion is given by:
+
+\begin{equation}
+  \iint_S\left(\rho\overrightarrow{V}\cdot\overrightarrow{dS}\right)\left(e 
+  + \frac{V+2}{2}\right)
+\end{equation}
+
+Combining these results, the energy equation becomes:
+
+\begin{equation}
+  \begin{split}
+  \iiint_R\frac{\partial}{\partial{t}}\{\rho\left(e + \frac{v^2}{2}\right)dR = \\
+    & - \iint_S\overrightarrow{Q}\cdot\overrightarrow{dS} \\
+    & + \iiint_R\rho\overrightarrow{f_g}/cdot\overrightarrow{V} dR \\ 
+    & + \iint_S\overrightarrow{V}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{dS}\right) \\ 
+    & - \iint_S\left(\rho\overrightarrow{V} \cdot\overrightarrow{dS}\right)\left(e + \frac{V^2}{2}\right) = 0
+  \end{split}
+\end{equation}
+
+Which leads to this final result:
+
+\begin{equation}
+  \begin{split}
+\frac{\partial}{\partial{t}}\rho\left
+(e + \frac{V^2}{2}\right) \\
+    & + \overrightarrow{\nabla}\cdot\overrightarrow{Q} \\
+    & -\rho\overrightarrow{f_g}\cdot\overrightarrow{V} \\
+    & - \overrightarrow{\nabla}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{V}\right) \\
+    & - \rho\overrightarrow{V}\cdot\overrightarrow{\nabla}\left(e + \frac{V^2}{2}\right) = 0
+  \end{split}
+\end{equation}
+
+If the woring fluid is assumed to be Newtonian, the heat flux is a function of thermodynamic state only and may be given as:
+
+\begin{equation}
+  \overrightarrow{Q} =  \overrightarrow{\nabla}T
+\end{equation}
+
+where $k$ is the thermal conductivity of the fluid.
+
+\subsection{Remaining Equations}
+
+The remaining equations neede to complete the set are the constituative relationships for the working fluid. In this investigation the fluid is a prefect gas and obeys the thermal state equation:
+
+\begin{equation}
+  P = \rho R T
+\end{equation}
+
+where $R$ is the ideal gas constant. If $c_p$ is the specific heat at constant pressure, and $c_v$ is the specific heat at constant volume, and if $\gamma = \frac{c_p}{c_v}$ are given, then the caloric state equation is
+
+\begin{equation}
+  e = c_v T
+\end{equation}
+
+The definition of the static enthalpy may be given by:
+
+\begin{equation}
+  h = c_p T = e + \frac{P}{\rho}
+\end{equation}
+
+Recalling the definition of the substantive derivative:
+
+\begin{equation}
+  \frac{Df}{Dt} = \frac{\partial f}{\partial t} + \overrightarrow{V}\cdot\nabla f
+\end{equation}, the cmplete system of equations necessary to describe the flow of a fluid may be summarized:
+
+\begin{enumerate}
+  \item{$
+    \frac{D\rho}{Dt} 
+    + \rho \overrightarrow{\nabla}\cdot\overrightarrow{V} = 0
+  $}
+  \item{$
+    \rho\frac{D\overrightarrow{V}}{Dt} = 
+    \rho\overrightarrow{f_g} 
+    + \overrightarrow{\nabla}\cdot\rttensor{\tau} 
+  $}
+  \item{$
+    \rho\frac{D}{Dt}\left(e + \frac{V^2}{2}\right) =
+    \rho \overrightarrow{f_g}\cdot\overrightarrow{V}
+    - \overrightarrow{\nabla}\cdot\overrightarrow{Q}
+    + \overrightarrow{\nabla}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{V}\right)
+  $}
+  \item{$P = \rho R T $}
+  \item{$e = c_v T $}
+  \item{$h = c_p T $}
+  \item{$ \gamma = \frac{c_p}{c_v} $}
+  \item{$
+    \rttensor{\tau} = 
+    - P\overrightarrow{I} 
+    + \lambda\left(\overrightarrow{\nabla}\cdot\overrightarrow{V}\right)\overrightarrow{I}
+    + \mu\{\left(\overrightarrow{\nabla}\overrightarrow{V}\right) 
+    + \left(\overrightarrow{\nabla}\overrightarrow{V}\right)^T\}
+  $}
+  \item{$ \overrightarrow{Q} = -k \overrightarrow{\nabla}T $}
+  \item{$ \mu = \mu(T) $}
+  \item{$\lambda = -\frac{2}{3}\mu $}
+  \item{$k = k(T) $}
+\end{enumerate}
+
+\subsection{Einstein summation convention}
+
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \frac{\partial(\rho u_{i})}{\partial x_{i}} = 0
+\end{equation}
+
+\begin{equation}
+\frac{\partial (\rho u_{i})}{\partial t} + \frac{\partial[\rho u_{i}u_{j}]}{\partial x_{j}} = -\frac{\partial p}{\partial x_{i}} + \frac{\partial \tau_{ij}}{\partial x_{j}} + \rho f_{i} \end{equation}
+\begin{equation}
+\frac{\partial (\rho e)}{\partial t} + (\rho e+p)\frac{\partial u_{i}}{\partial x_{i}} = \frac{\partial(\tau_{ij}u_{j})}{\partial x_{i}} + \rho f_{i}u_{i} + \frac{\partial(\dot{ q_{i}})}{\partial x_{i}} + r \end{equation}
+The Einstein summation convention dictates that: When a sub-indice (here $i$ or $j$) is twice or more repeated in the same equation, one sums across the n-dimensions. 
+This means, in the context of Navier-Stokes in 3 spacial dimensions, that one repeats the term 3 times, each time changing the indice for one representing the corresponding dimension (ie $1,2,3$ or $x,y,z$). Equation 1 is therefore a shorthand representation of: $\frac{\partial \rho}{\partial t}+\frac{\partial(\rho u_{1})}{\partial x_{1}}+\frac{\partial(\rho u_{2})}{\partial x_{2}}+ \frac{\partial(\rho u_{3})}{\partial x_{3}}=0$.
+Equation $2$ is actually a superposition of 3 separable equations which could be written in a 3-line form: one line equation for each $i$ in each of which one sums the three terms for the $j$ sub-indice.
+\subsection{Classic $\longrightarrow , \otimes , \nabla$ notation}
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \overrightarrow{\nabla}\cdot(\rho\overrightarrow{u})=0 \end{equation}
+\begin{equation}
+\frac{\partial(\rho \overrightarrow{u})}{\partial t} + \overrightarrow{\nabla}\cdot[\rho\overline{\overline{u\otimes u}}] = -\overrightarrow{\nabla p} + \overrightarrow{\nabla}\cdot\overline{\overline{\tau}} + \rho\overrightarrow{f} \end{equation}
+\begin{equation}
+\frac{\partial(\rho e)}{\partial t} + \overrightarrow{\nabla}\cdot((\rho e + p)\overrightarrow{u}) = \overrightarrow{\nabla}\cdot(\overline{\overline{\tau}}\cdot\overrightarrow{u}) + \rho\overrightarrow{f}\overrightarrow{u} + \overrightarrow{\nabla}\cdot(\overrightarrow{\dot{q}})+r \end{equation}
+
+Here $\otimes$ denotes the tensorial product, forming a tensor from the constituent vectors. A double bar denotes a tensor. The three equations ($4,5,6$) are equivalent to ($1,2,3$).
+

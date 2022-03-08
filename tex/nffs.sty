@@ -7,7 +7,7 @@
 \usepackage{parskip} % no indents on paragraphs
 \usepackage{graphicx}
 \graphicspath{../assets/images/}
-
+\usepackage{physics}
 % program listings
 \usepackage{listings}
 \newcommand{\includecode}[1]{
@@ -48,6 +48,10 @@
     \figlab{#1}
   \end{figure}
 }
+
+% tensor double bars
+\newcommand*{\Rttensor}[1]{\overline{\overline{#1}}}
+\newcommand*{\rttensor}[1]{\bar{\bar{#1}}}
 
 % sympytex
 \usepackage{sympytex}
