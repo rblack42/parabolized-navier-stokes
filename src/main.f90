@@ -3,14 +3,20 @@ program hello
   use init
   use body
   use solver
+  use maccormack
   use prtplot
   implicit none
-  ! This is a comment line; it is ignored by the compiler
-  print *, 'Hello, World!'
 
-  ! initialize shared data
+  print *, 'Parabolized Navier Stokes Example'
+
+  ! Initialize shared data
   call reset
-  !call ogive_cylinder
-  call solve(1)
-  call plot
+  ! Main loop starts here
+  call ogive_cylinder()
+  call plot()
+  do while (mit < 10)
+    call precor()
+    call plot
+    mit = mit + 1
+  end do
 end program hello

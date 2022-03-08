@@ -85,6 +85,8 @@ fluids==1.0.17
     # via -r requirements.in
 fonttools==4.29.1
     # via matplotlib
+fortran-magic==0.7
+    # via -r requirements.in
 gitdb==4.0.9
     # via gitpython
 gitpython==3.1.27
@@ -110,6 +112,7 @@ ipytest==0.12.0
     # via -r requirements.in
 ipython==8.1.0
     # via
+    #   fortran-magic
     #   ipykernel
     #   ipytest
     #   ipython-tikzmagic
@@ -273,6 +276,7 @@ numpy==1.22.2
     # via
     #   -r requirements.in
     #   fluids
+    #   fortran-magic
     #   matplotlib
     #   scipy
 packaging==21.3

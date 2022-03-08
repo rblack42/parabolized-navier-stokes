@@ -9,6 +9,7 @@ fluids
 jupyter-book
 jupyter-contrib-nbextensions
 git+git://github.com/mkrphys/ipython-tikzmagic.git
+fortran-magic
 
 pytest
 pytest-cov

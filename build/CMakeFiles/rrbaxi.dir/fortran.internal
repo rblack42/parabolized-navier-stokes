@@ -1,0 +1,8 @@
+# The fortran modules provided by this target.
+provides
+ body.mod
+ init.mod
+ maccormack.mod
+ prtplot.mod
+ shared.mod
+ solver.mod

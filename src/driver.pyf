@@ -1,0 +1,12 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+subroutine driver(minf,rho,n) ! in driver.f90
+    real intent(in) :: minf
+    real dimension(n),intent(out),depend(n) :: rho
+    integer intent(in) :: n
+end subroutine driver
+
+! This file was auto-generated with f2py (version:1.22.2).
+! See:
+! https://web.archive.org/web/20140822061353/http://cens.ioc.ee/projects/f2py2e

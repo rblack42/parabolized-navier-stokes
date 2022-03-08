@@ -1,0 +1,58 @@
+\usepackage[cc]{titlepic}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage[square,numbers]{natbib} % number style bibliography
+\usepackage{hyperref} % enable active url links
+\usepackage{parskip} % no indents on paragraphs
+\usepackage{graphicx}
+\graphicspath{../assets/images/}
+
+% program listings
+\usepackage{listings}
+\newcommand{\includecode}[1]{
+    \lstinputlisting[caption={$ #1 $}, frame=single]{../assets/#1}
+}
+
+% include images as figures
+\newcommand{\genlab}[2]{\label{#1:#2}}
+\newcommand{\figlab}[1]{\genlab{fig}{#1}}
+
+\newcommand{\importimage}[2]{
+\begin{figure}[htb]
+\centering
+    \includegraphics[width=0.45\textwidth]{../assets/images/#1}
+\caption{#2}
+\figlab{#1}
+\end{figure}
+}
+
+% tikz figures
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\newcommand{\importtikzfigure}[2]{
+  \begin{figure}[htb]
+    \centering
+    \includestandalone[width=0.45\textwidth]{../assets/tikzfigures/tikz-#1}
+    \caption{#2}
+    \figlab{#1}
+  \end{figure}
+}
+\newcommand{\importskinnytikzfigure}[2]{
+  \begin{figure}[htb]
+    \centering
+    \includestandalone[width=0.25\textwidth]{../assets/tikzfigures/tikz-#1}
+    \caption{#2}
+    \figlab{#1}
+  \end{figure}
+}
+
+% sympytex
+\usepackage{sympytex}
+
+\newcommand{\osc}{{\it OpenSCAD}}
+\newcommand{\LPP}{{\it Limited Pennyplane}}
+\newcommand{\MM}{{\it Math Magic}}
+\newcommand{\PY}{{\it Python}}

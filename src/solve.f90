@@ -5,6 +5,10 @@ contains
   subroutine solve(i)
     integer parameter, i
     real xk, phi, phm, phs, xmx, den, rad, t
+
+    xmu1 = xmuinf * x(1)
+    xmu2 = xmuinf * x(2)
+
     xk = hinf -0.5 * (cc/aa)**2
     phi = 0.8 * xk * aa * aa / (1.4 * bb * bb)
     phm = 2.4/2.4
