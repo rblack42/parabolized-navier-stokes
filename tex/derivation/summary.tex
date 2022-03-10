@@ -1,0 +1,39 @@
+\subsection{Summary}
+
+The complete system of equations necessary to describe the flow of a fluid may
+be summarized:
+
+\begin{enumerate}
+  \item{$
+    \frac{D\rho}{Dt} 
+    + \rho \overrightarrow{\nabla}\cdot\overrightarrow{V} = 0
+  $}
+  \item{$
+    \rho\frac{D\overrightarrow{V}}{Dt} = 
+    \rho\overrightarrow{f_g} 
+    + \overrightarrow{\nabla}\cdot\rttensor{\tau} 
+  $}
+  \item{$
+    \rho\frac{D}{Dt}\left(e + \frac{V^2}{2}\right) =
+    \rho \overrightarrow{f_g}\cdot\overrightarrow{V}
+    - \overrightarrow{\nabla}\cdot\overrightarrow{Q}
+    + \overrightarrow{\nabla}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{V}\right)
+  $}
+  \item{$P = \rho R T $}
+  \item{$e = c_v T $}
+  \item{$h = c_p T $}
+  \item{$ \gamma = \frac{c_p}{c_v} $}
+  \item{$
+    \rttensor{\tau} = 
+    - P\overrightarrow{I} 
+    + \lambda\left(\overrightarrow{\nabla}\cdot\overrightarrow{V}\right)\overrightarrow{I}
+    + \mu\{\left(\overrightarrow{\nabla}\overrightarrow{V}\right) 
+    + \left(\overrightarrow{\nabla}\overrightarrow{V}\right)^T\}
+  $}
+  \item{$ \overrightarrow{Q} = -k \overrightarrow{\nabla}T $}
+  \item{$ \mu = \mu(T) $}
+  \item{$\lambda = -\frac{2}{3}\mu $}
+  \item{$k = k(T) $}
+\end{enumerate}
+
+

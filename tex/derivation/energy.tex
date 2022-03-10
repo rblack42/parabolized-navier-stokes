@@ -1,0 +1,77 @@
+\subsection{Energy Equation}
+
+The energy equation follow from the principle conservation of energy.
+
+\begin{quote} 
+  The net rate of increase of the internal and kinetic energy, per
+  unit mass, in $R$ is equal to the net flux of heat into $R$ through the
+  surface $S$ due to heat conduction, plus the net rate of work done on $R$ due
+  to body and surface forces, plus the net influx of energy into $R$ through
+  $S$ due to the fluid motion.  
+\end{quote}
+
+It must be assumed that the classical   laws of thermodynamics, including the
+first law, hold in the presence of shear stress and heat conduction in order
+for the statement to be valid. if $e$ is the internal energy of the fluid per
+unit mass, the net increase of the internal and kinetic energy is given by:
+
+\begin{equation}
+  \iiint_R\{\rho e + \rho \frac{V^2}{2}\} dR
+\end{equation}
+
+The net flux of heat into $R$ may be found by integrating the inward component
+og the heat flux vector $\overrightarrow{Q}$ over the surface:
+
+\begin{equation}
+  \iint_S\overrightarrow{Q}\cdot\overrightarrow{dS}
+\end{equation}
+
+The work done on the fluid is a function of both body forces and shearing
+forces, and is given by
+
+\begin{equation}
+  \iint_S\overrightarrow{V} \cdot\left(\rttensor{\tau}\cdot\overrightarrow{dS}\right) 
+  + \iiint_R\left(rho \overrightarrow{f_g}\cdot\overrightarrow{V}\right)dR
+\end{equation}
+
+Finally, the net influx of energy due to the fluid motion is given by:
+
+\begin{equation}
+  \iint_S\left(\rho\overrightarrow{V}\cdot\overrightarrow{dS}\right)\left(e 
+  + \frac{V+2}{2}\right)
+\end{equation}
+
+Combining these results, the energy equation becomes:
+
+\begin{equation}
+  \begin{split}
+  \iiint_R\frac{\partial}{\partial{t}}\{\rho\left(e + \frac{v^2}{2}\right)dR = \\
+    & - \iint_S\overrightarrow{Q}\cdot\overrightarrow{dS} \\
+    & + \iiint_R\rho\overrightarrow{f_g}/cdot\overrightarrow{V} dR \\ 
+    & + \iint_S\overrightarrow{V}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{dS}\right) \\ 
+    & - \iint_S\left(\rho\overrightarrow{V} \cdot\overrightarrow{dS}\right)\left(e + \frac{V^2}{2}\right) = 0
+  \end{split}
+\end{equation}
+
+Which leads to this final result:
+
+\begin{equation}
+  \begin{split}
+\frac{\partial}{\partial{t}}\rho\left
+(e + \frac{V^2}{2}\right) \\
+    & + \overrightarrow{\nabla}\cdot\overrightarrow{Q} \\
+    & -\rho\overrightarrow{f_g}\cdot\overrightarrow{V} \\
+    & - \overrightarrow{\nabla}\cdot\left(\rttensor{\tau}\cdot\overrightarrow{V}\right) \\
+    & - \rho\overrightarrow{V}\cdot\overrightarrow{\nabla}\left(e + \frac{V^2}{2}\right) = 0
+  \end{split}
+\end{equation}
+
+If the woring fluid is assumed to be Newtonian, the heat flux is a function of thermodynamic state only and may be given as:
+
+\begin{equation}
+  \overrightarrow{Q} =  \overrightarrow{\nabla}T
+\end{equation}
+
+where $k$ is the thermal conductivity of the fluid.
+
+

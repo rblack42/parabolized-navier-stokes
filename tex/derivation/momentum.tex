@@ -1,0 +1,153 @@
+\subsection{Conservation of Momentum}
+
+The conservation of momentum law is stated as follows:
+
+\begin{quote}
+The time rate of momentum increase throughout $R$ is equal to the net force
+acting on $R$ plus the net flux of momentum into $R$ through the surface $S$.
+\end{quote}
+
+The net force acting on $R$ will consist of any externally applied body force
+plus the forces acting on $R$ that stem from the motion of the fluid itself.
+These later forces are the internal stress forces acting on the fluid volume.
+Since any body forces will be specified, we need to find a way to describe the
+internal stress forces in the fluid at any point.  
+
+Stress is related to the forces exerted on a fluid particle by adjacent
+particles. If we cut our control volume with a plane, the force per unit area
+acting on one side of the plane is caused by the fluid particles on the other
+side of the plane. Since  the stresses measured at any point will be different
+for each plane cut passing through that point, the minimum amount of
+information necessary to completely describe the stress state at that point
+must be determined.
+
+Consider an arbitrary tetrahedron with three sides joining at a point in the
+flow, and assume that the stress on these three sides is known. Then the
+condition of state equilibrium can be used to find the stress on the fourth
+side of this shape, regardless of the orientation of that fourth face with
+respect to the other three. From this argument it may be seen that the stress
+state at a point may be determined if the stresses on any three surfaces
+passing through that point are known. For convenience, these three surfaces are
+usually assumed to be orthogonal. Note that the three stresses are vector
+quantities that can be expressed as a set of vector components. Furthermore,
+the conditions of static equilibrium will result in a total of nine vector
+components, but only six are independent.
+
+The standard way to describe the stress state at a point in to set up a stress
+matrix $\tau$ that looks like this:
+
+\import{eqns/}{eq9}
+
+In this notation $\tau_{xy}$ is the $y$ component of the stress acting on the
+face perpendicular to the $x$ axis.
+
+The three dependent stresses are:
+
+\import{eqns/}{eq10}
+
+Therefore, the stress matrix is seen to be symmetric.
+
+In general, as a fluid volume moves, it will both deform and rotate. If we
+consider two points along the path of this motion, we can use a *Taylor's
+Series* to relate the velocity at one point to the velocity at the other. In
+Cartesian coordinates this becomes:
+
+\import{eqns/}{eq11}
+
+We can write similar equations for the remaining two velocity components. If we only retail the linear terms, this reduced to:
+
+\import{eqns/}{eq12}
+
+This can be expressed in matrix form as:
+
+\import{eqns/}{eq13}
+
+This matrix is commonly referred to as the rate of deformation matrix.The
+derivatives $\frac{\partial{u}}{\partial{x}}$,
+$\frac{\partial{v}}{\partial{y}}$, and $\frac{\partial{w}}{\partial{z}}$
+indicate stretching motion called dilitation. The other derivatives indicate
+distortion of the fluid due to shearing forces. By viewing the motion in this
+manner it is apparent that the stresses in the fluid characterized by the
+matrix $\rttensor{\tau}$ may be described by the above deformation matrix
+together with the static pressure force. This analysis is known as {\it Stokes
+Theorem} for stresses and is given below
+
+As was previously noted, the stress matrix is symmetric. One method for forming
+a symmetric matrix from $\Rttensor{D}$ is to combine it with its transpose. Thus
+the stress tensor may be written as:
+
+\import{eqns/}{eq14}
+
+where $\mu$ is the bulk viscosity coefficient. It is common to define the
+hydrostatic pressure $P$ as the mean value of the three normal stresses
+$\tau_{xx}$, $\tau_{yy}$, and $\tau_{zz}$. In this case:
+
+\begin{equation}
+  P = \frac{1}{3} \{ -3P^* + 2\mu(\frac{\partial{u}}{\partial{x}} + \frac{\partial{v}}{\partial{y}} + \frac{\partial{u}}{\partial{x}} ) \}
+\end{equation}
+
+or
+
+\begin{equation}
+  P = -P^* + \frac{2}{3}\mu \nabla\cdot\overrightarrow{V}\overrightarrow{I} + \mu ( \Rttensor{D} + \Rttensor{D}^T )
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+\rttensor{\tau} = -P\Rttensor{I} + \lambda\overrightarrow{\nabla}\cdot\overrightarrow{V}\Rttensor{I}  + \mu ( \Rttensor{D} + \Rttensor{D}^T )
+\end{equation}
+
+where $\lambda$ is the dilitational viscosity coefficient. This is relaed to
+the bulk viscosity by Stokes hypothesis:
+
+\begin{equation}
+  \lambda =  - \frac{2}{3}\mu
+\end{equation}
+
+To find the contribution of the stress to the total forces acting on the
+control volume, the shear force must be integrated over the surface of the
+volume:
+
+\begin{equation}
+  d\overrightarrow{F_\tau} = \rttensor{\tau}\cdot \overrightarrow{dS}
+\end{equation}
+
+The total force acting on the fluid within the control volume is therefore given by:
+
+\begin{equation}
+  \overrightarrow{F} = \iiint_R\rho\overrightarrow{f_g} dR + \iint_S\rttensor{\tau}\cdot \overrightarrow{ds}
+\end{equation}
+
+where $\overrightarrow{f_g}$ is the externally applied force per unit mass.
+
+The momentum flux through $R$ is given by:
+
+\begin{equation}
+  \iint_S \overrightarrow{V}\left(\rho\overrightarrow{V}\cdot\overrightarrow{dS}\right)
+\end{equation}
+
+The mathematical expression for the momentum equation may now be written as
+
+\begin{equation}
+  \iiint_R(\frac{\partial}{\partial{t}}(\rho\overrightarrow{V})dR = \iiint_R\rho\overrightarrow{f_g} dR + 
+    \iint_S\rttensor{\tau}\cdot dS + \iint_S \overrightarrow{V}(\rho\overrightarrow{V}\cdot \overrightarrow{dS})
+\end{equation}
+
+Again, using the divergence theorem to convert surface integrals to volume integrals, we get this:
+
+\begin{equation}
+  \iiint_R\frac{\partial}{dt}(\rho\overrightarrow{V})dR = \iiint_R\{\rho \overrightarrow{f_g} + \overrightarrow{\nabla}\cdot\rttensor{\tau} - \overrightarrow{V}(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}) + \rho(\overrightarrow{V}\cdot\nabla)\overrightarrow{V}\}dR
+\end{equation}
+
+As with the continuity equation, this leads to this final equation:
+
+\begin{equation}
+\frac{\partial}{dt}\left(\rho\overrightarrow{V}\right) 
+  - \rho \overrightarrow{f_g} 
+  - \overrightarrow{\nabla}\cdot\rttensor{\tau} 
+  + \overrightarrow{V}\left(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}\right) 
+  + \rho\left(\overrightarrow{V}\cdot\nabla\right)\overrightarrow{V} = 0
+\end{equation}
+
+

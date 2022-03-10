@@ -222,6 +222,46 @@ or
   \end{aligned}
 \end{equation}
 
+By expanding this last expression and rearranging terms, the following form
+results for the momentum equation
+
+\begin{equation}
+  \begin{aligned}
+\rho \bigg\{ 
+      \frac{\partial u}{\partial t}\hat{e_x} 
+    + \frac{\partial v}{\partial t}\hat{e_r}
+    + \frac{\partial w}{\partial t}\hat{e_\phi} 
+    + u\frac{\overrightarrow{V}}{\partial t}\hat{e_x}
+    + v\frac{\overrightarrow{V}}{\partial r}\hat{e_r}
+    + \frac{w}{r}\frac{\overrightarrow{V}}{\partial \phi}\hat{e_\phi}
+  \bigg\}a \\
+    &+ \rho u \bigg\{
+    \frac{\partial u}{\partial x}\hat{e_x} 
+    + \frac{\partial v}{\partial x}\hat{e_r}
+    + \frac{\partial w}{\partial x}\hat{e_\phi} \bigg\}\\
+  &+ \rho v \bigg\{
+    \frac{\partial u}{\partial r}\hat{e_x} 
+    + \frac{\partial v}{\partial r}\hat{e_r}
+    + \frac{\partial w}{\partial r}\hat{e_\phi} \bigg\}\\
+  &+ \frac{\rho w}{r} \bigg\{
+    \frac{\partial u}{\partial \phi}\hat{e_x} 
+    + \left(\frac{\partial v}{\partial \phi}-r\right)\hat{e_r}
+    + \left(\frac{\partial w}{\partial \phi}+v\right)\hat{e_\phi} \bigg\} \\
+  &= \tau_{xx}\hat{e_x}
+    + \bigg\{\tau_{xr}\hat{e_r}
+    + \tau_{x\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_2} 
+    &= \tau_{rx}\hat{e_x}
+    + \tau_{rr}\hat{e_r}
+    + \tau_{r\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_3} 
+    &= \tau_{\phi x}\hat{e_x}
+    + \tau_{\phi r}\hat{e_r}
+    + \tau_{\phi\phi}\hat{e_\phi} \bigg\}
+  \end{aligned}
+\end{equation}
+
+\subsection{Other Forms}
 \begin{align}
       \pdv{\rho}{t}+\pdv{(\rho u_i)}{x_i} &= 0 \\
       \pdv{(\rho u_i)}{t}+\pdv{(\rho u_i u_j)}{x_j} &= -\pdv{p}{x_i}+\pdv{\tau_{ij}}{x_j}+\rho f_i \\
@@ -230,7 +270,7 @@ or
       \vec{\nabla}\cdot(\rho\vec{u}) &= 0 \\
       \pdv{(\rho \vec{u})}{t}+\vec{\nabla}\cdot\rho\vec{u}\otimes\vec{u} &= -\vec{\nabla p}+\vec{\nabla}\cdot\Bar{\Bar{\tau}}+\rho\vec{f} \\
       \pdv{(\rho e)}{t}+\vec{\nabla}\cdot(\rho e+p)\vec{u} &= \vec{\nabla}\cdot(\Bar{\Bar{\tau}}\cdot\vec{u})+\rho\vec{f}\vec{u}+\vec{\nabla}\cdot\vec{\dot{q}}+r 
-    \end{align}
+\end{align}
 
 \subsection{Einstein summation convention}
 
