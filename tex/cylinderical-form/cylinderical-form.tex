@@ -1,0 +1,263 @@
+\section{Derivation of the Cylinderical Navier Stokes Equations}
+
+In this section the system of governing equations given previously will be
+expanded in a cylinderical coordiniate system.
+
+For cylinderical ($x$,$r$,$\phi$) coordinates, the velocity vector
+$\overrightarrow{V}$ is given by:
+
+\begin{equation}
+\overrightarrow{V} = u \hat{e_x} + v \hat{e_r} + w \hat{e_\phi}
+\end{equation}
+
+where $\hat{e_x}$, $\hat{e_r}$, and $\hat{e_\phi}$ are the unit vectors.
+
+The del $\overrightarrow{\nabla}$ operator may be given as:
+
+\begin{equation}
+  \overrightarrow{\nabla} =  
+      \hat{e_x}\pdv{x} 
+    + \hat{e_r}\pdv{r} 
+    + \frac{\hat{e_\phi}}{r}\pdv{\phi}
+\end{equation}
+
+Since the analysis that follows will require taking derivatives of the unit
+vectors, these expressions will be derived next.
+
+The position vector $\overrightarrow{r}$ may be written in cartesian coordinates as:
+
+\begin{equation}
+  \begin{aligned}
+    \overrightarrow{r} &= x\hat{i} + y\hat{j} + z\hat{k} \\
+        &= x\hat{i} + r\cos\phi\hat{j} + r\sin\phi\hat{k}
+  \end{aligned}
+\end{equation}
+
+Now the equations for the unit vectors are:
+
+\begin{equation}
+  \hat{e_x} = 
+  \pdv{\va{r}}{x} = \hat{i}
+\end{equation}
+
+\begin{equation}
+  \hat{e_r} 
+  = \pdv{\va{r}}{r} 
+  = \cos{\phi}\hat{j} + \sin{\phi}\hat{k}
+\end{equation}
+
+\begin{equation}
+  \hat{e_\phi} 
+  = \pdv{\va{r}}{\phi}
+  = - \sin{\phi}\hat{j} + \cos{\phi}\hat{k}
+\end{equation}
+
+From these equations, the derivatives of the unit vectors can be found:
+
+\begin{equation}
+    \pdv{\hat{e_x}}{x} 
+  = \pdv{\hat{e_x}}{r} 
+  = \pdv{\hat{e_x}}{\phi} = 0
+\end{equation}
+
+\begin{equation}
+  \pdv{\hat{e_r}}{x} = \pdv{\hat{e_r}}{r} = 0
+\end{equation}
+
+\begin{equation}
+  \pdv{\hat{e_r}}{\phi} = 
+  - \sin\phi\hat{j} 
+  + \cos\phi\hat{k} = \hat{e_\phi}
+\end{equation}
+
+\begin{equation}
+  \pdv{\hat{e_\phi}}{x}
+  = \pdv{\hat{e_\phi}}{r} = 0
+\end{equation}
+
+\begin{equation}
+  \pdv{\hat{e_\phi}}{\phi} - -\cos{\phi}\hat{j} - \sin{\phi}\hat{k} = -\hat{e_r}
+\end{equation}
+
+
+Using these expressions, the derivatives of a general vector function become:
+
+\begin{equation}
+  \begin{aligned}
+    \pdv{\va{F}}{x} &= 
+    \pdv{F_1}{x}\hat{e_x} + 
+    \pdv{F_2}{x}\hat{e_r} + 
+    \pdv{F_3}{x}\hat{e_\phi} \\
+    \pdv{\va{F}}{r} &= 
+    \pdv{F_1}{r}\hat{e_x} + 
+    \pdv{F_2}{r}\hat{e_r} + 
+    \pdv{F_3}{r}\hat{e_\phi} \\
+    \pdv{\va{F}}{\phi} &= 
+    \pdv{F_1}{\phi}\hat{e_x} + 
+    \left(\pdv{F_2}{\phi} - F_3\right)\hat{e_r} + 
+    \left(\pdv{F_3}{\phi} + F2\right)\hat{e_\phi}
+  \end{aligned}
+\end{equation}
+
+where $F_1$, $F_2$, and $F_3$ are the vector components.
+
+\subsection{Continuity Equation}
+
+The continuity equation will be expanded first:
+
+\begin{equation}
+\frac{D\rho}{Dt} 
+  + \rho \overrightarrow{\nabla}\cdot\overrightarrow{V} = 0
+\end{equation}
+
+\begin{equation}
+  \pdv{\rho}{t} 
+  + \left(\overrightarrow{V}\cdot\overrightarrow{\nabla}\rho\right)
+  + \rho\left(\overrightarrow{\nabla}\cdot\overrightarrow{V}\right) = 0
+\end{equation}
+
+\begin{equation}
+  \pdv{\rho}{t}  
+  + u\pdv{\rho}{x}
+  + v\pdv{\rho}{r} 
+  + \frac{w}{r}\pdv{\rho}{\phi}
+  + \rho\left(\pdv{u}{x}
+  + \pdv{v}{r} 
+  + \frac{1}{r}\pdv{w}{\phi} 
+  + \frac{v}{r} \right) = 0
+\end{equation}
+
+After rearranging and combining terms, we get this form:
+
+\begin{equation}
+  \pdv{\rho}{t}
+  + \pdv{x}\left(\rho u\right)
+  + \frac{1}{r}\pdv{r}\left(\rho v r \right)
+  + \frac{1}{r}\pdv{\phi}\left(\rho w\right) = 0
+\end{equation}
+
+\subsection{Momentum Equation}
+
+Before expanding the momentum equation, it will be convenient to use the following for the shear stress matrix:
+
+\begin{equation}
+  \rttensor{\tau} 
+  = \overrightarrow{\tau_1}\hat{e_x} 
+  + \overrightarrow{\tau_2}\hat{e_r}
+  + \overrightarrow{\tau_3}\hat{e_\phi}
+\end{equation}
+
+Where:
+
+\begin{equation}
+  \begin{aligned}
+    \overrightarrow{\tau_1} 
+    &= \tau_{xx}\hat{e_x}
+    + \tau_{xr}\hat{e_r}
+    + \tau_{x\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_2} 
+    &= \tau_{rx}\hat{e_x}
+    + \tau_{rr}\hat{e_r}
+    + \tau_{r\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_3} 
+    &= \tau_{\phi x}\hat{e_x}
+    + \tau_{\phi r}\hat{e_r}
+    + \tau_{\phi\phi}\hat{e_\phi}
+  \end{aligned}
+\end{equation}
+
+In this investigation, body forces will be neglected. The momentum equation becomes:
+
+\begin{equation}
+  \begin{aligned}
+    \rho\frac{D\va{V}}{Dt}
+    &= \div\rttensor{\tau} \\
+    \rho 
+    \{
+      \pdv{\va{V}}{t} 
+      +  \va{V}\grad\va{V}
+    \} 
+    &= \div{\rttensor{\tau}}
+  \end{aligned}
+\end{equation}
+
+or
+
+\begin{equation}
+  \begin{aligned}
+  \rho \bigg\{ 
+      \pdv{u}{t}\hat{e_x} 
+    + \pdv{v}{t}\hat{e_r}
+    + \pdv{w}{t}\hat{e_\phi} 
+    + u\pdv{\va{V}}{t}\hat{e_x}
+    + v\pdv{\va{V}}{r}\hat{e_r}
+    + \frac{w}{r}\pdv{\va{V}}{\phi}\hat{e_\phi}
+  \bigg\} \\
+  &= \hat{e_x}\cdot\pdv{x}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &+ \hat{e_r}\cdot\pdv{r}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &+ \frac{\hat{e_\phi}}{r}\cdot\pdv{\phi}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &= \pdv{\overrightarrow{\tau_1}}{x} 
+    + \pdv{\partial\overrightarrow{\tau_2}}{r} 
+    + \frac{1}{r} 
+    \bigg\{
+      \pdv{\overrightarrow{\tau_3}}{\phi}  
+      + \overrightarrow{\tau_2}
+    \bigg\}
+  \end{aligned}
+\end{equation}
+
+By expanding this last expression and rearranging terms, the following form
+results for the momentum equation
+
+\begin{equation}
+  \begin{aligned}
+\rho \bigg\{ 
+      \frac{\partial u}{\partial t}\hat{e_x} 
+    + \frac{\partial v}{\partial t}\hat{e_r}
+    + \frac{\partial w}{\partial t}\hat{e_\phi} 
+    + u\frac{\overrightarrow{V}}{\partial t}\hat{e_x}
+    + v\frac{\overrightarrow{V}}{\partial r}\hat{e_r}
+    + \frac{w}{r}\frac{\overrightarrow{V}}{\partial \phi}\hat{e_\phi}
+  \bigg\}a \\
+    &+ \rho u \bigg\{
+    \frac{\partial u}{\partial x}\hat{e_x} 
+    + \frac{\partial v}{\partial x}\hat{e_r}
+    + \frac{\partial w}{\partial x}\hat{e_\phi} \bigg\}\\
+  &+ \rho v \bigg\{
+    \frac{\partial u}{\partial r}\hat{e_x} 
+    + \frac{\partial v}{\partial r}\hat{e_r}
+    + \frac{\partial w}{\partial r}\hat{e_\phi} \bigg\}\\
+  &+ \frac{\rho w}{r} \bigg\{
+    \frac{\partial u}{\partial \phi}\hat{e_x} 
+    + \left(\frac{\partial v}{\partial \phi}-r\right)\hat{e_r}
+    + \left(\frac{\partial w}{\partial \phi}+v\right)\hat{e_\phi} \bigg\} \\
+  &= \tau_{xx}\hat{e_x}
+    + \bigg\{\tau_{xr}\hat{e_r}
+    + \tau_{x\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_2} 
+    &= \tau_{rx}\hat{e_x}
+    + \tau_{rr}\hat{e_r}
+    + \tau_{r\phi}\hat{e_\phi} \\
+     \overrightarrow{\tau_3} 
+    &= \tau_{\phi x}\hat{e_x}
+    + \tau_{\phi r}\hat{e_r}
+    + \tau_{\phi\phi}\hat{e_\phi} \bigg\}
+  \end{aligned}
+\end{equation}
+
+

@@ -82,72 +82,48 @@ where $\mu$ is the bulk viscosity coefficient. It is common to define the
 hydrostatic pressure $P$ as the mean value of the three normal stresses
 $\tau_{xx}$, $\tau_{yy}$, and $\tau_{zz}$. In this case:
 
-\begin{equation}
-  P = \frac{1}{3} \{ -3P^* + 2\mu(\frac{\partial{u}}{\partial{x}} + \frac{\partial{v}}{\partial{y}} + \frac{\partial{u}}{\partial{x}} ) \}
-\end{equation}
+\import{eqns/}{eq15}
 
 or
 
-\begin{equation}
-  P = -P^* + \frac{2}{3}\mu \nabla\cdot\overrightarrow{V}\overrightarrow{I} + \mu ( \Rttensor{D} + \Rttensor{D}^T )
-\end{equation}
+\import{eqns/}{eq16}
 
 Therefore:
 
-\begin{equation}
-\rttensor{\tau} = -P\Rttensor{I} + \lambda\overrightarrow{\nabla}\cdot\overrightarrow{V}\Rttensor{I}  + \mu ( \Rttensor{D} + \Rttensor{D}^T )
-\end{equation}
+\import{eqns/}{eq17}
 
 where $\lambda$ is the dilitational viscosity coefficient. This is relaed to
 the bulk viscosity by Stokes hypothesis:
 
-\begin{equation}
-  \lambda =  - \frac{2}{3}\mu
-\end{equation}
+\import{eqns/}{eq18}
 
 To find the contribution of the stress to the total forces acting on the
 control volume, the shear force must be integrated over the surface of the
 volume:
 
-\begin{equation}
-  d\overrightarrow{F_\tau} = \rttensor{\tau}\cdot \overrightarrow{dS}
-\end{equation}
+\import{eqns/}{eq19}
 
 The total force acting on the fluid within the control volume is therefore given by:
 
-\begin{equation}
-  \overrightarrow{F} = \iiint_R\rho\overrightarrow{f_g} dR + \iint_S\rttensor{\tau}\cdot \overrightarrow{ds}
-\end{equation}
+\import{eqns/}{eq20}
 
 where $\overrightarrow{f_g}$ is the externally applied force per unit mass.
 
 The momentum flux through $R$ is given by:
 
-\begin{equation}
-  \iint_S \overrightarrow{V}\left(\rho\overrightarrow{V}\cdot\overrightarrow{dS}\right)
-\end{equation}
+\import{eqns/}{eq21}
 
 The mathematical expression for the momentum equation may now be written as
 
-\begin{equation}
-  \iiint_R(\frac{\partial}{\partial{t}}(\rho\overrightarrow{V})dR = \iiint_R\rho\overrightarrow{f_g} dR + 
-    \iint_S\rttensor{\tau}\cdot dS + \iint_S \overrightarrow{V}(\rho\overrightarrow{V}\cdot \overrightarrow{dS})
-\end{equation}
+\import{eqns/}{eq22}
+
 
 Again, using the divergence theorem to convert surface integrals to volume integrals, we get this:
 
-\begin{equation}
-  \iiint_R\frac{\partial}{dt}(\rho\overrightarrow{V})dR = \iiint_R\{\rho \overrightarrow{f_g} + \overrightarrow{\nabla}\cdot\rttensor{\tau} - \overrightarrow{V}(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}) + \rho(\overrightarrow{V}\cdot\nabla)\overrightarrow{V}\}dR
-\end{equation}
+\import{eqns/}{eq23}
 
 As with the continuity equation, this leads to this final equation:
 
-\begin{equation}
-\frac{\partial}{dt}\left(\rho\overrightarrow{V}\right) 
-  - \rho \overrightarrow{f_g} 
-  - \overrightarrow{\nabla}\cdot\rttensor{\tau} 
-  + \overrightarrow{V}\left(\overrightarrow{\nabla}\cdot \rho\overrightarrow{V}\right) 
-  + \rho\left(\overrightarrow{V}\cdot\nabla\right)\overrightarrow{V} = 0
-\end{equation}
+\import{eqns/}{eq24}
 
 
