@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  10 MAR 2022 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  12 MAR 2022 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,67 +805,100 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count322
-<math-magik-lpp.png, id=19, 689.57625pt x 492.84125pt>
-File: math-magik-lpp.png Graphic file (type png)
-<use math-magik-lpp.png>
-Package pdftex.def Info: math-magik-lpp.png  used on input line 12.
-(pdftex.def)             Requested size: 237.60132pt x 169.81232pt.
 
+(./introduction/introduction.tex) (./derivation/derivation.tex
+(../assets/tikzfigures/tikz-control-volume.tex)
+File: ../assets/tikzfigures/tikz-control-volume.tex Graphic file (type tex)
+ (./eqns/eq2_1.tex)
+(./derivation/continuity.tex [1
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./eqns
+/eq2_2.tex) (./eqns/eq2_3.tex) (./eqns/eq2_4.tex) (./eqns/eq2_5.tex [2]) (./eqn
+s/eq2_6.tex) (./eqns/eq2_7.tex)
+(./eqns/eq2_8.tex)) (./derivation/momentum.tex [3] (./eqns/eq2_9.tex)
+(./eqns/eq2_10.tex) (./eqns/eq2_11.tex [4]) (./eqns/eq2_12.tex)
+(./eqns/eq2_13.tex) [5] (./eqns/eq2_14.tex) (./eqns/eq2_15.tex)
+(./eqns/eq2_16.tex) (./eqns/eq2_17.tex) (./eqns/eq2_18.tex) (./eqns/eq2_19.tex)
+(./eqns/eq2_20.tex [6]) (./eqns/eq2_21.tex) (./eqns/eq2_22.tex)
+(./eqns/eq2_23.tex) (./eqns/eq2_24.tex)) (./derivation/energy.tex [7]
+(./eqns/eq2_25.tex) (./eqns/eq2_26.tex) (./eqns/eq2_27.tex) (./eqns/eq2_28.tex)
+(./eqns/eq2_29.tex [8]) (./eqns/eq2_30.tex) (./eqns/eq2_31.tex))
+(./derivation/state.tex (./eqns/eq2_32.tex [9]) (./eqns/eq2_33.tex)
+(./eqns/eq2_34.tex) (./eqns/eq2_35.tex)) (./derivation/summary.tex [10]))
 (./cylinderical-form/cylinderical-form.tex
 Overfull \hbox (15.21457pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Derivation of the Cylin-der-i-cal Navier Stokes Equa-
  []
 
-[1
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./math-
-magik-lpp.png>] [2] [3]
-Overfull \hbox (80.7724pt too wide) detected at line 222
+(./eqns/eq3_1.tex) (./eqns/eq3_2.tex) (./eqns/eq3_3.tex) (./eqns/eq3_4.tex)
+(./eqns/eq3_5.tex) (./eqns/eq3_6.tex) [11] (./eqns/eq3_7.tex) (./eqns/eq3_8.tex
+) (./eqns/eq3_9.tex) (./eqns/eq3_10.tex) (./eqns/eq3_11.tex) (./eqns/eq3_12.tex
+) (./eqns/eq3_13.tex [12]) (./eqns/eq3_14.tex) (./eqns/eq3_15.tex)
+(./eqns/eq3_16.tex) (./eqns/eq3_17.tex) (./eqns/eq3_18.tex) (./eqns/eq3_19.tex)
+(./eqns/eq3_20.tex [13]
+Overfull \hbox (80.7724pt too wide) detected at line 37
 [][][]
  []
 
-
-Overfull \hbox (142.76086pt too wide) detected at line 261
+) (./eqns/eq3_21.tex
+Overfull \hbox (3.74207pt too wide) detected at line 37
 [][][]
  []
 
-[4]) (./main.toc)
+) [14] (./eqns/eq3_22.tex) (./eqns/eq3_23.tex) (./eqns/eq3_24.tex)
+(./eqns/eq3_25.tex [15]) (./eqns/eq3_26.tex) (./eqns/eq3_27.tex)
+(./eqns/eq3_28.tex [16]) (./eqns/eq3_29.tex) (./eqns/eq3_30.tex)
+(./eqns/eq3_31.tex)) (./nondimensionalization/nondimensionalize.tex [17]
+(./eqns/eq4_1.tex) [18] [19]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 99.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\phi' on input line 99.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 99.
+
+) (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- (./main.bbl) [5] (./main.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./main.bbl [20]) [21] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 44546573F69F7060F15277CB0666B3AB;631.
+(rerunfilecheck)             Checksum: B5A210D0F6E566867F9099B8BA702F39;2470.
  ) 
 Here is how much of TeX's memory you used:
- 23905 strings out of 478994
- 421595 string characters out of 5858184
- 743471 words of memory out of 5000000
- 40882 multiletter control sequences out of 15000+600000
+ 24466 strings out of 478994
+ 430629 string characters out of 5858184
+ 742551 words of memory out of 5000000
+ 41116 multiletter control sequences out of 15000+600000
  412307 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,20n,116p,515b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,27n,116p,515b,915s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (5 pages, 182505 bytes).
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (21 pages, 236436 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 368 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 147 words of extra memory for PDF output out of 10000 (max. 10000000)
 

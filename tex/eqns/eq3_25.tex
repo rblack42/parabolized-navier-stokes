@@ -1,0 +1,22 @@
+\begin{equation}
+  \begin{aligned}
+\rho\frac{D}{Dt}\left(e + \frac{V^2}{2}\right) = \\
+- \div{\va{Q}} + \div\left(\rttensor{\tau}\cdot\va{V}\right) \\
+  \rho \bigg\{\pdv{t}\left(e + \frac{V^2}{2}\right)
+  + \va{V}\cdot\grad\left(e + \frac{V^2}{2}\right)
+  \bigg\} \\
+  = \div{\left(k\grad{T}\right)}
+  + \div{\left(\rttensor{\tau}\cdot\va{V}\right)} \\
+  \rho\pdv{t}\left(e + \frac{V^2}{2}\right) 
+  + \rho u \pdv{x}\left(e + \frac{V^2}{2}\right)
+  + \rho v \pdv{r}\left(e + \frac{V^2}{2}\right)
+  + \frac{\rho w}{r}\pdv{\phi}\left(e + \frac{V^2}{2}\right) \\
+  =\pdv{x}\left(k\pdv{T}{x}\right) + \pdv{r}\left(k\pdv{T}{r}\right) 
+    + \frac{1}{r}\bigg\{\pdv{\phi}\left(\frac{1}{r}k\pdv{T}{\phi}\right) 
+    + k\pdv{T}{r}\bigg\} \\
+  + \pdv{x}\left(u\tau_{xx} + v\tau_{xr} + w\tau_{x\phi}\right)
+  + \pdv{r}\left(u\tau_{xr} + v\tau_{rr} + w\tau_{\phi\phi}\right) \\
+    + \frac{1}{r}\bigg\{\pdv{\phi}\left(u\tau_{x\phi}+v\tau_{r\phi}+w\tau_{\phi\phi}\right)
+  + \left(u\tau_{xr} + v\tau_{rr} + w\tau_{r\phi}\right)\bigg\}
+  \end{aligned} \\
+\end{equation}

@@ -1,0 +1,38 @@
+\begin{equation}
+  \begin{aligned}
+  \rho \bigg\{ 
+      \pdv{u}{t}\hat{e_x} 
+    + \pdv{v}{t}\hat{e_r}
+    + \pdv{w}{t}\hat{e_\phi} 
+    + u\pdv{\va{V}}{t}\hat{e_x}
+    + v\pdv{\va{V}}{r}\hat{e_r}
+    + \frac{w}{r}\pdv{\va{V}}{\phi}\hat{e_\phi}
+  \bigg\} \\
+  &= \hat{e_x}\cdot\pdv{x}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &+ \hat{e_r}\cdot\pdv{r}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &+ \frac{\hat{e_\phi}}{r}\cdot\pdv{\phi}
+  \{
+      \overrightarrow{\tau_1}\hat{e_x}
+    + \overrightarrow{\tau_2}\hat{e_r}
+    + \overrightarrow{\tau_3}\hat{e_\phi}
+  \} \\
+  &= \pdv{\overrightarrow{\tau_1}}{x} 
+    + \pdv{\partial\overrightarrow{\tau_2}}{r} 
+    + \frac{1}{r} 
+    \bigg\{
+      \pdv{\overrightarrow{\tau_3}}{\phi}  
+      + \overrightarrow{\tau_2}
+    \bigg\}
+  \end{aligned}
+\end{equation}
+

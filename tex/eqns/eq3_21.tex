@@ -1,0 +1,38 @@
+\begin{equation}
+  \begin{aligned}
+    \rho \bigg\{ 
+      \pdv{u}{t}\hat{e_x} 
+    + \pdv{v}{t}\hat{e_r}
+    + \pdv{w}{t}\hat{e_\phi} 
+    \bigg\} \\
+    &+ \rho u \bigg\{
+    \pdv{u}{x}\hat{e_x} 
+    + \pdv{v}{x}\hat{e_r}
+    + \pdv{w}{x}\hat{e_\phi} 
+    \bigg\}\\
+    &+ \rho v \bigg\{
+    \pdv{u}{r}\hat{e_x} 
+    + \pdv{v}{r}\hat{e_r}
+    + \pdv{w}{r}\hat{e_\phi} \bigg\}\\
+    &+ \frac{\rho w}{r} \bigg\{
+    \pdv{u}{\phi}\hat{e_x} 
+    + \left(\pdv{v}{\phi}-w\right)\hat{e_r}
+    + \left(\pdv{w}{\phi}+v\right)\hat{e_\phi} \bigg\} \\
+    &= \bigg\{
+    \tau_{xx}\hat{e_x}
+    + \tau_{xr}\hat{e_r}
+    + \tau_{x\phi}\hat{e_\phi}
+    \bigg\} \\
+  &+ \bigg\{
+    \tau_{xr}\hat{e_x}
+    + \tau_{rr}\hat{e_r}
+    + \tau_{r\phi}\hat{e_\phi}
+  \bigg\} \\
+  &+ \frac{1}{r} \bigg\{
+    \left(\pdv{\tau_{x\phi}}{\phi} + \tau_{xr}\right) \hat{e_x} \\
+    &+ \left(\pdv{\tau_{r\phi}}{\phi} - \tau_{x\phi} + \tau_{rr}\right)\hat{e_r} \\
+  &+ \left(\pdv{\tau_{\phi\phi}}{\phi} + 2\tau_{r\phi}\right)\hat{e_\phi} 
+  \bigg\}
+  \end{aligned}
+\end{equation}
+

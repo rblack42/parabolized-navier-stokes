@@ -3,12 +3,12 @@
 The conservation of momentum law is stated as follows:
 
 \begin{quote}
-The time rate of momentum increase throughout $R$ is equal to the net force
-acting on $R$ plus the net flux of momentum into $R$ through the surface $S$.
+  The time rate of momentum increase throughout {\bf R} is equal to the net force
+  acting on {\bf R} plus the net flux of momentum into {\bf R} through the surface {\bf S}.
 \end{quote}
 
-The net force acting on $R$ will consist of any externally applied body force
-plus the forces acting on $R$ that stem from the motion of the fluid itself.
+The net force acting on {\bf R} will consist of any externally applied body force
+plus the forces acting on {\bf R} that stem from the motion of the fluid itself.
 These later forces are the internal stress forces acting on the fluid volume.
 Since any body forces will be specified, we need to find a way to describe the
 internal stress forces in the fluid at any point.  
@@ -36,35 +36,36 @@ components, but only six are independent.
 The standard way to describe the stress state at a point in to set up a stress
 matrix $\tau$ that looks like this:
 
-\import{eqns/}{eq9}
+\import{eqns/}{eq2_9}
 
 In this notation $\tau_{xy}$ is the $y$ component of the stress acting on the
 face perpendicular to the $x$ axis.
 
 The three dependent stresses are:
 
-\import{eqns/}{eq10}
+\import{eqns/}{eq2_10}
 
 Therefore, the stress matrix is seen to be symmetric.
 
 In general, as a fluid volume moves, it will both deform and rotate. If we
-consider two points along the path of this motion, we can use a *Taylor's
-Series* to relate the velocity at one point to the velocity at the other. In
+consider two points along the path of this motion, we can use a {\it Taylor
+Series} to relate the velocity at one point to the velocity at the other. In
 Cartesian coordinates this becomes:
 
-\import{eqns/}{eq11}
+\import{eqns/}{eq2_11}
 
-We can write similar equations for the remaining two velocity components. If we only retail the linear terms, this reduced to:
+We can write similar equations for the remaining two velocity components. If we
+only retail the linear terms, this reduced to:
 
-\import{eqns/}{eq12}
+\import{eqns/}{eq2_12}
 
 This can be expressed in matrix form as:
 
-\import{eqns/}{eq13}
+\import{eqns/}{eq2_13}
 
 This matrix is commonly referred to as the rate of deformation matrix.The
-derivatives $\frac{\partial{u}}{\partial{x}}$,
-$\frac{\partial{v}}{\partial{y}}$, and $\frac{\partial{w}}{\partial{z}}$
+derivatives $\pdv{u}{x}$,
+$\pdv{v}{y}$, and $\pdv{w}{z}$
 indicate stretching motion called dilitation. The other derivatives indicate
 distortion of the fluid due to shearing forces. By viewing the motion in this
 manner it is apparent that the stresses in the fluid characterized by the
@@ -76,54 +77,54 @@ As was previously noted, the stress matrix is symmetric. One method for forming
 a symmetric matrix from $\Rttensor{D}$ is to combine it with its transpose. Thus
 the stress tensor may be written as:
 
-\import{eqns/}{eq14}
+\import{eqns/}{eq2_14}
 
 where $\mu$ is the bulk viscosity coefficient. It is common to define the
 hydrostatic pressure $P$ as the mean value of the three normal stresses
 $\tau_{xx}$, $\tau_{yy}$, and $\tau_{zz}$. In this case:
 
-\import{eqns/}{eq15}
+\import{eqns/}{eq2_15}
 
 or
 
-\import{eqns/}{eq16}
+\import{eqns/}{eq2_16}
 
 Therefore:
 
-\import{eqns/}{eq17}
+\import{eqns/}{eq2_17}
 
-where $\lambda$ is the dilitational viscosity coefficient. This is relaed to
-the bulk viscosity by Stokes hypothesis:
+where $\lambda$ is the dilitational viscosity coefficient. This is related to
+the bulk viscosity by {\it Stokes hypothesis}:
 
-\import{eqns/}{eq18}
+\import{eqns/}{eq2_18}
 
 To find the contribution of the stress to the total forces acting on the
 control volume, the shear force must be integrated over the surface of the
 volume:
 
-\import{eqns/}{eq19}
+\import{eqns/}{eq2_19}
 
 The total force acting on the fluid within the control volume is therefore given by:
 
-\import{eqns/}{eq20}
-
+\import{eqns/}{eq2_20}
 where $\overrightarrow{f_g}$ is the externally applied force per unit mass.
 
-The momentum flux through $R$ is given by:
+The momentum flux through {\bf R} is given by:
 
-\import{eqns/}{eq21}
+\import{eqns/}{eq2_21}
 
 The mathematical expression for the momentum equation may now be written as
 
-\import{eqns/}{eq22}
+\import{eqns/}{eq2_22}
 
 
-Again, using the divergence theorem to convert surface integrals to volume integrals, we get this:
+Again, using the divergence theorem to convert surface integrals to volume
+integrals, we get this:
 
-\import{eqns/}{eq23}
+\import{eqns/}{eq2_23}
 
 As with the continuity equation, this leads to this final equation:
 
-\import{eqns/}{eq24}
+\import{eqns/}{eq2_24}
 
 
