@@ -15,7 +15,7 @@ N &= [kg m / sec^2 ]
 \end{aligned}
 \end{equation}
 
-The conversion factors needed to from one dimensional syste to the other are
+The conversion factors needed to from one dimensional system to the other are
 
 \begin{equation}
 \begin{aligned}
@@ -51,9 +51,17 @@ fact that most numerical studies closely couple with experimental efforts for
 verification of results, it would appear appropriate to consider the quantities
 available to an experimental researcher in establishing test conditions.
 
-A wind tunnel, unless it has a variable nozzzle, will be designed to operate at a fixedMach number. It will, therefore, operate at a fixed ratio of total to static property ratios.In general, the driving total pressure is variable and, in some cases, static temperature may be varied by using heaters, so these two test conditions, together with the test Mach number, will be readily available for any experimental study.
+A wind tunnel, unless it has a variable nozzle, will be designed to operate at
+a fixed Mach number. It will, therefore, operate at a fixed ratio of total to
+static property ratios.In general, the driving total pressure is variable and,
+in some cases, static temperature may be varied by using heaters, so these two
+test conditions, together with the test Mach number, will be readily available
+for any experimental study.
 
-This information and the thermodynamic properties of the working fluid are sufficient to completely describe the test conditions. For the present numerical study, then, the following test conditions will be used to define the reference quantities:
+This information and the thermodynamic properties of the working fluid are
+sufficient to completely describe the test conditions. For the present
+numerical study, then, the following test conditions will be used to define the
+reference quantities:
 
 \begin{center}
 \begin{tabular}{ c c }
@@ -68,19 +76,28 @@ $c_v^*$ & $ft^2/sec^2$ $^oR$
 \end{tabular}
 \end{center}
 
-At this point, it would appear that the total quantities could be used for reference parameters. However, by using the prefect gas relations, the static quantities may br derived and used. Before making this decision, the governing equations should be nondimensionalized so that the groupings of reference quantities may be considered. Note that nondimensionalization of the length scale gives the following:
+At this point, it would appear that the total quantities could be used for
+reference parameters. However, by using the prefect gas relations, the static
+quantities may br derived and used. Before making this decision, the governing
+equations should be nondimensionalized so that the groupings of reference
+quantities may be considered. Note that nondimensionalization of the length
+scale gives the following:
 
 \begin{equation}
 \pdv{x} = l^*_{ref} \pdv{x^*}
 \end{equation}
 
-The angular derivatives will be left in their normal form. For the analysis that follows, the pressure component of the normal shear stress terms will be removed. That is:
+The angular derivatives will be left in their normal form. For the analysis
+that follows, the pressure component of the normal shear stress terms will be
+removed. That is:
 
 \begin{equation}
 \tau_{xx} = \sigma_{xx} - \pdv{P}{x} etc
 \end{equation}
 
-Finally, since the present work will deal only with the steady form of the governing equations, the time derivatives will be eliminated . The nondimensionalization follows:
+Finally, since the present work will deal only with the steady form of the
+governing equations, the time derivatives will be eliminated . The
+nondimensionalization follows:
 
 \subsection{Continuity}
 
@@ -94,6 +111,26 @@ Finally, since the present work will deal only with the steady form of the gover
 
 \subsection{x Momentum}
 
+\begin{equation}
+  \frac{\rho^*_{ref}{u^*_{ref}}^2}{l^*_{ref}}\bigg\{
+    \rho u \pdv{u}{x} + \rho v\pdv{u}{r} + \frac{\rho w}{r}\pdv{u}{\phi} 
+  \bigg\}
+\end{equation}
+
 \subsection{r Momentum}
 
+\begin{equation}
+  \frac{\rho^*_{ref}{u^*_{ref}}^2}{l^*_{ref}}\bigg\{
+    \rho u \pdv{v}{x} + \rho v\pdv{v}{r} + \frac{\rho w}{r}\left(\pdv{v}{\phi} - w\right) 
+  \bigg\}
+\end{equation}
+
 \subsection{$\phi$ Momentum}
+
+\begin{equation}
+  \frac{\rho^*_{ref}{u^*_{ref}}^2}{l^*_{ref}}\bigg\{
+    \rho u \pdv{w}{x} + \rho v\pdv{w}{r} + \frac{\rho w}{r}\left(\pdv{w}{\phi} + v\right) 
+  \bigg\}
+\end{equation}
+
+
