@@ -16,3 +16,9 @@ rrbaxi
 
 # Jupyter
 .ipynb_checkpoints
+
+# TeX
+*.log
+*.aux
+*.toc
+

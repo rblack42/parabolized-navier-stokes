@@ -1,0 +1,37 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc, intersections}
+
+\begin{document}
+\begin{tikzpicture}
+  % define constants
+\pgfmathsetmacro{\rad}{8}
+\pgfmathsetmacro{\h}{0.5}
+\pgfmathsetmacro{\rphi}{acos((\rad-\h)/\rad)}
+\pgfmathsetmacro{\a}{\rad*sin(\rphi)}
+\pgfmathsetmacro{\alphau}{atan(3*\h/\a)}
+\pgfmathsetmacro{\alphal}{atan(2*\h/\a)}
+
+% draw body
+\draw (0,\h) arc (90:90 + \rphi:\rad);
+\draw (0,-\h) arc(270:270 - \rphi:\rad);
+\draw (-\a,0) -- (5,0);
+\draw (0,\h) -- (5,\h);
+\draw (0,-\h) -- (5,-\h);
+
+% draw outer boundary lines
+\draw (-\a,0) -- ++(\alphau:5);
+\draw (-\a,0) -- ++(-\alphal:5);
+
+% draw cross section view
+\draw (0,3*\h) -- (0,-2*\h);
+
+\draw (0,-2.25*\h) -- (0,-9.5*\h);
+\draw (0,-6.5*\h) circle (2.5*\h);
+\draw (0,-7*\h) circle (\h);
+
+\draw (-4*\h,-7*\h) -- (4*\h, -7*\h);
+\draw (-4*\h,-6.5*\h) -- (4*\h, -6.5*\h);
+\end{tikzpicture}
+\end{document}
+

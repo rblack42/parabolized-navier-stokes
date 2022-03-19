@@ -1,0 +1,50 @@
+\section{ Analytic Coordinate System for the Ogive-Cylinder at Angle of Attack}
+
+Since the generalized three-dimensional code to be developed will be
+numerically evaluating the transformation coefficients, it will be useful to
+solve a simple problem using both analytic and numerically evaluated
+coefficients. For this analysis, a coordinate system will be described for use
+in solving flow fields about an ogive-cylinder at angle of attack.
+
+To simplify the analysis, the coordinate system will be a modified cylindrical
+system centered on the body axis. At any axial station, the computational
+domain will extend from the body outward to a specified outer limit. The outer
+boundary will be a circle with its center shifted off of the body axis to allow
+the bow shock to be more nearly aligned with this boundary.
+
+The outer boundary radius and offset point location will vary linearly with $x$.
+The details of this system are shown in the following figures.
+
+\importtikzfigure{ogive-cylinder-grid}{Ogive-cylinder Grid}
+
+The transformation will be describes as follows:
+
+\begin{equation}
+\begin{aligned}
+\xi &= \xi(x) \\
+\eta &=  \eta(x,r,\phi) \\
+\delta = \delta(\phi)
+\end{aligned}
+\end{equation}
+
+It will be desirable to allow the step size to vary away from the body in order
+to compress points in the boundary layer near the body for the present. This
+variation will be defined as some function of the fractional distance between
+the body and outer boundary. In this case , $\eta$ will be defined as:
+
+\begin{equation}
+\begin{aligned}
+\eta = \eta(\overline{r}) \\
+\overline{r} &= (r - r_b)/(r_s - r_b) 
+\end{aligned}
+\end{equation}
+
+The required transformation functions are:
+
+\begin{equation}
+\begin{aligned}
+F_x &= \xi/_x F_\xi + \eta_x F_\eta \\
+F_r &= \eta_r F_\eta \\
+F_\phi &= \eta_\phi F_\eta + \delta_\phi F_\delta
+\end{aligned}
+\end{equation}

@@ -1,0 +1,213 @@
+\section{Derivation of a Generalized Non-Orthogonal Coordinate
+Transformation}
+
+Solutions to the Navier-Stokes equations are  not conveniently obtained in a
+coordinate system that is not tied closely to the body shape being considered.
+Therefore, an arbitrary body-oriented coordinate system will be used in this
+analysis, and the governing equations will be transformed into that system.
+Rather than considering the case where velocity vectors are everywhere tangent
+to the coordinate curves, though, the velocity vectors will be referenced to a
+conventional cylindrical coordinate  system.
+
+The generalized transformation will be given as:
+
+\begin{equation}
+(x, r, \phi) \Leftrightarrow (\xi, \eta, \delta)
+\end{equation}
+
+Where:
+
+\begin{equation}
+  \begin{aligned}
+    \xi &= \xi(x) \\
+    \eta &= \eta(x,r,\phi) \\
+    \delta &= \delta(x,r,\phi)
+  \end{aligned}
+\end{equation}
+
+The cylindrical partial derivatives will now be:
+
+\begin{equation}
+  \begin{aligned}
+    \pdv{x} &= \xi_x\pdv{\xi} + \eta_x\pdv{\eta} + \delta_x\pdv{\delta} \\
+    \pdv{r} &= \eta_r\pdv{\eta} + \delta_r\pdv{\delta} \\
+    \pdv{\phi} &= \eta_\phi\pdv{\eta} + \delta_\phi\pdv{\delta}
+  \end{aligned}
+\end{equation}
+
+With similar equations for the higher derivatives.
+
+The inverse transformation is given by:
+
+\begin{equation}
+  \begin{aligned}
+    x &= x(\xi) \\
+    r &= r(\xi,\eta,\delta) \\
+    \phi &= \phi(\xi,\eta,\delta)
+  \end{aligned}
+\end{equation}
+
+In order for this transformation to exist and be unique, the {\it Jacobian} {\bf J}
+must be everywhere nonzero. The {\it Jacobian} is defined as:
+
+\begin{equation}
+  J = \begin{vmatrix}
+    x_\xi & r_\xi & \phi_\xi \\
+    x_\eta & r_\eta & \phi_\eta \\
+    x_\delta & r_\delta & \phi_\delta
+  \end{vmatrix}
+\end{equation}
+
+For the transformations we are considering, $x_\eta = x_\delta = 0$. Thus the {\it Jacobian} becomes just:
+
+\begin{equation}
+  J = x_\xi \left( r_\eta\phi_\delta - r_\delta\phi_\eta \right) \neq 0
+\end{equation}
+
+Total derivatives in both coordinate systems may be written as:
+
+\begin{equation}
+  \begin{aligned}
+    dx &= x_\xi d\xi \\
+    dr &= r_\xi d\xi + r_\eta d\eta + r_\delta d\delta \\
+    d\phi &= \phi_\xi d_\xi + \phi_\eta d\eta + \phi_\xi d\delta \\
+    d\xi &= \xi_x d\xi \\
+    d\eta &= \eta_x dx + \eta_r dr + \eta_\phi d\phi \\
+    d_\delta &= \delta_xdx + \delta_r dr + \delta_\phi d\phi
+  \end{aligned}
+\end{equation}
+
+Combining these equations and rearranging gives this:
+
+\begin{equation}
+  \begin{aligned}
+    dx &= x_\xi \{ \xi_x d\xi \} \\
+    dr &= r_\xi \{ \xi_x d\xi \} + r_\eta \{ \eta_x dx + \eta_r dr + \eta_\phi d\phi \} + r_\delta \{ \delta_xdx + \delta_r dr + \delta_\phi d\phi
+ \} \\
+    d\phi &= \phi_\xi \{ \xi_x d_\xi \} + \phi_\eta \{ \eta_x dx + \eta_r dr + \eta_\phi d\phi \} + \phi_\xi \{ \delta_xdx + \delta_r dr + \delta_\phi d\phi
+ \} 
+  \end{aligned}
+\end{equation}
+
+Now, rearranging these equations and equating coefficients, the following
+equations result:
+
+\begin{equation}
+  x_\xi \xi_x = 1
+\end{equation}
+
+\begin{equation}
+  r_\xi xi_x + r_\eta \eta_x + r_\delta \delta_x = 0
+\end{equation}
+
+\begin{equation}
+  r_\eta \eta_r + r_\delta \delta_r = 1
+\end{equation}
+
+\begin{equation}
+  r_\eta eta_\phi + r_\delta \delta_\phi = 0
+\end{equation}
+
+\begin{equation}
+  \phi_\xi \xi_x + \phi_\eta \eta_x + \phi_\delta \delta_x = 0
+\end{equation}
+
+
+\begin{equation}
+  \phi_\eta \eta_r + \phi_\delta \delta_r = 0
+\end{equation}
+
+\begin{equation}
+  \phi_\eta \eta_\phi + \phi_\delta \delta_\phi = 1
+\end{equation}
+
+
+
+
+From this system of equations, the transformation coefficients needed to express partial derivatives in that system, that is all partial derivatives will be taken in the transformed coordinate system. Performing this analysis, the results are:
+
+\begin{equation}
+  \begin{aligned}
+  \xi_x &= 1 / \xi_x \\
+  \eta_x &= \{ r_\xi\phi_\xi - r_\xi \phi_\delta \} / J \\
+  \delta_x &= \{ \phi_\eta r_\xi - r_\eta \phi_\xi \} / J \\
+  \eta_r &= \{ \phi_\delta x_\xi \} / J \\
+  \delta_r &= - \{ \phi_\eta x_\xi \} / J \\
+  \eta_\phi &= - \{ r_\delta x_\xi \} / J \\
+  \delta_\phi &= \{ r_\eta x_\xi \} / J
+\end{aligned}
+\end{equation}
+
+If second derivatives must also be transformed, this may be accomplished by
+differentiating previous expressions:
+
+\begin{multline}
+  F_{xx} = \xi_{xx} F_\xi + \eta_{xx} F_\eta + \delta_{xx} F_\delta + \\
+  \xi_x \{ \xi_x F_{\xi\xi} + \eta_x F_{\xi\eta}  + \delta_x F_{\xi\xi} \} + \\
+  \eta_x \{ \xi_x F_{\xi\eta} + \eta_x F_{\eta\eta} + \delta_x F_{\eta\delta} \} + \\
+  \delta_x\{ \xi_x F_{\xi\xi} + \eta_x F_{\eta\delta} + \delta_x F_{\delta\delta} \} 
+\end{multline}
+
+\begin{multline}
+  F_{xr}  = \eta_{xr} F_\eta + \delta_{xr} F_\delta + \delta_{xr}F_\delta + \\
+  \xi \{ \eta_r F_{\xi\eta} + \delta_r F_{\delta\delta} \} + \\
+  \eta_x \{ \eta_r F_{\eta\eta} + \delta_r F_{\eta\delta} \} + \\
+  \delta_x \{ \eta_r F_{\eta\delta} + \delta_r F_{\delta\delta} \} 
+\end{multline}
+
+\begin{multline}
+  F_{x\phi} = \eta_{x\phi} F_\eta + \delta_{x\phi} F_\delta + \\
+  \xi_x \{ \eta_\phi F_{\xi\eta} + \eta_\phi F_{\xi\delta} \} + \\
+  \eta_x \{ \eta\_\phi F_{\eta\eta} + \delta_\phi F_{\eta\delta} \} + \\
+  \delta_x \{ \eta_\phi F_{\eta\delta} + \delta_\phi F_{\delta\delta} \}
+\end{multline}
+
+\begin{multline}
+  F_{rr} = \eta_{rr} + \delta_{rr} F_\delta + \\
+  \eta_r \{ \eta_r F_{\eta\eta} + \delta_r F_{\eta\delta} \} + \\
+  \delta_r \{ \eta_r F_{\eta\delta} + \delta_r F_{\delta\delta} \} 
+\end{multline}
+
+\begin{multline}
+  F_{r\phi} = \eta_{r\phi} F_\eta + \delta_{r\phi} F_\delta + \\
+  \eta_r \{ \eta_\phi F_{\eta\eta} + \delta_\phi F_{\eta\delta} \} + \\
+  \delta_r \{ \eta_\phi F_{\eta\delta} + \delta_\phi F_{\delta\delta} \}
+\end{multline}
+
+\begin{multline}
+  F_{\phi\phi} = \eta_{\phi\phi} F_\eta + \delta_{\phi\phi} F_\delta + \\
+  \eta_\phi \{ \eta_\phi F_{\eta\eta} + \delta_\phi F_{\eta\delta} \} + \\
+  \delta_\phi \{ \eta_\phi F_{\eta\delta} + \delta_\phi F_{\delta\delta} \}
+\end{multline}
+
+The new transformation coefficients may also be obtained by differentiating
+previous expressions. These will not be expanded fully here:
+
+\begin{equation}
+  \begin{aligned}
+    \xi_{xx} &= -\xi_x x_{\xi\xi}/x_\xi^2 \\
+    \eta_{xx} &= \xi_x ( \eta_x)_\xi + \eta_x (\eta_x)_\eta + \delta_x(\eta_x)_\delta \\
+    \eta_{xr} &= \eta_r(\eta_x)_\eta + \delta_r(\eta_x)_\delta \\
+    \eta_{x\phi} &= \eta_\phi(\eta_x)_\eta + \delta_\phi(\eta_x)_\delta \\
+    \eta_{rr} &= \eta_r(\eta_r)_\eta + \delta_r(\eta_r)_\delta \\
+    \eta_{r\phi} &= \eta_\phi(\eta_r)_\eta + \delta_\phi(\eta_r)_\delta \\
+    \eta_{\phi\phi} &= \eta_\phi(\eta_phi)_\eta + \delta_\phi(\eta_\phi)_\delta \\
+    \delta_{xx} &= \xi_x (\delta_x)_\xi + \eta_x(\delta_x)_\eta + \delta_x(\delta_x)_\delta \\
+    \delta_{xr} &= \eta_r (\delta_x)_\eta + \delta_r(\delta_x)_\delta \\
+    \delta_{x\phi} &= \eta_\phi (\delta_x)_\eta + \delta_\phi(\delta_x)_\delta\\
+    \delta_{rr} &= \eta_r (\delta_r)_\eta + \delta_r ) \delta_r)_\delta \\
+    \delta_{r\phi} &= \eta_\phi(\delta_r0_\eta + \delta_\phi(\delta_r)_\delta  \\
+    \delta_{\phi\phi} &= \eta_\phi(\delta_\phi)_\eta + \delta_\phi(\delta_\phi)_\delta
+  \end{aligned}
+\end{equation}
+
+Note that at this point nothing has been said about the actual relationship
+between points in the two coordinate systems except that the {\it Jacobian} be
+nonzero. In fact, any relationship that maps points uniquely from one system to
+the other may be used.  If the error associated with obtaining the
+transformation coefficients numerically is acceptable, then the functional
+relationship between the two systems mar remain unknown. In this manner any
+method of obtaining the point to point mapping may be used and not just the
+methods with a firm analytical foundation. This is the approach that will be
+taken here since it does not restrict the range of possible mapping methods to
+any particular class
