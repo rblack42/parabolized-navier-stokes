@@ -5,6 +5,7 @@ sympy
 pint
 Pmw
 fluids
+f90wrap
 
 jupyter-book
 jupyter-contrib-nbextensions
