@@ -79,6 +79,8 @@ entrypoints==0.4
     #   nbconvert
 executing==0.8.3
     # via stack-data
+f90wrap==0.2.7
+    # via -r requirements.in
 flake8==4.0.1
     # via -r requirements.in
 fluids==1.0.17
@@ -127,7 +129,7 @@ ipython-genutils==0.2.0
     #   jupyter-server
     #   nbformat
     #   notebook
-ipython-tikzmagic @ git+git://github.com/mkrphys/ipython-tikzmagic.git
+ipython-tikzmagic @ git+https://github.com/mkrphys/ipython-tikzmagic.git
     # via -r requirements.in
 ipywidgets==7.6.5
     # via
@@ -275,6 +277,7 @@ notebook==6.4.8
 numpy==1.22.2
     # via
     #   -r requirements.in
+    #   f90wrap
     #   fluids
     #   fortran-magic
     #   matplotlib

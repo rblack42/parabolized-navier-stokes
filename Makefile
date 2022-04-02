@@ -8,6 +8,7 @@ FSRCS	:= src/shared.f90 \
 		   src/solve.f90 \
 		   src/maccormack.f90 \
 		   src/main.f90
+
 FOBJS	:= $(FSRCS:.f90=.o)
 FFLAGS	:= -O -std=f2018 -Jmod -fcheck=bounds
 
@@ -43,7 +44,7 @@ nb:
 	cd book && \
 		jupyter notebook
 
-.PHONY: bool
+.PHONY: book
 book:
 	jb build book
 	cp -R book/* docs
