@@ -22,12 +22,13 @@ contains
       ! initialize w
       do i=1,4
         do j = 1,4
-          w(i,j) = 0.0
+          w(i,j) = 0.0 1=rho, 2=u, 3=v, 4=p
         end do
       end do
  
       ! main predictor corrector sweep            
       do i=2,neta
+        ! last pass, update work array with free stream data
         if(i == neta) then
           do j = 1,4
               w(j,1) = w(j,2)

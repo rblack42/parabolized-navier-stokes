@@ -1,0 +1,14 @@
+
+\documentclass[15pt,preview,border=0pt]{standalone}
+
+\usepackage{oz}
+
+\begin{document}
+\begin{schema}{BirthdayBook}
+    known: \pset NAME \\
+    birthday: NAME \pfun DATE
+\ST
+    known = \dom birthday
+\end{schema}
+
+\end{document}

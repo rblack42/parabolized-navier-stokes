@@ -1,0 +1,25 @@
+import FreeStream as fs
+
+    
+def printer(self,mit,delm):
+	print("Flow Field Properties")
+    print("Tangent Cone Iteration %3d (%10.5f)" % (mit, delm))
+    print("  I      Rho         U          V          P          T          M        Pt")
+    for i in range ( self.neta, 0, -1 ):
+        t = self.hinf - 0.5*(fs.u[i]**2 + fs.v[i]**2)
+        pt2 = fs.p[i]
+        ptg = "----------"
+        xm = 0.0
+        if(i != 1):
+            ptg = "|          ";
+            xm = math.sqrt((fs.u[i]**2+fs.v[i]**2)/(0.4*t))
+            pt2 = fs.p[i]/fs.pinf*(xm/fs.xminf)**7 \
+                *((7.0*fs.xminf**2-1.0)/(7.0*xm**2-1.0))**2.5
+        j = int(pt2/3.0 *10.0) +1
+        ptg = ""
+        for k in range (1,j+1):
+            ptg += "*"
+        print(" %2d %10.5f %10.5f %10.5f %10.5f %10.5f %10.5f %s" % \
+            (i,fs.rho[i],fs.u[i],fs.v[i],fs.p[i],t, xm, ptg))
+                
+
